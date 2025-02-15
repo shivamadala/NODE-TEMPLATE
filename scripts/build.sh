@@ -1,5 +1,4 @@
 #!/bin/bash
 set -e
-docker build -t YOUR_DOCKER_USERNAME/my-backend ./backend
-docker build -t YOUR_DOCKER_USERNAME/my-frontend ./frontend
-
+docker build -t shimadal/my-backend ./backend
+docker build -t shimadal/my-frontend ./frontend
