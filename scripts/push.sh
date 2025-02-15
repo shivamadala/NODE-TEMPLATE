@@ -1,5 +1,5 @@
 #!/bin/bash
 set -e
-docker push YOUR_DOCKER_USERNAME/my-backend:latest
-docker push YOUR_DOCKER_USERNAME/my-frontend:latest
+docker push shimadal/my-backend:latest
+docker push shimadal/my-frontend:latest
 
