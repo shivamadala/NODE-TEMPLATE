@@ -1,0 +1,12 @@
+replicaCount: 2
+
+image:
+  backend: YOUR_DOCKER_USERNAME/my-backend:latest
+  frontend: YOUR_DOCKER_USERNAME/my-frontend:latest
+
+service:
+  backend:
+    port: 5000
+  frontend:
+    port: 3000
+

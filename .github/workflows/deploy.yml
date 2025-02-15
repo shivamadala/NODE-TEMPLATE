@@ -1,0 +1,27 @@
+name: Deploy Fullstack App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run build script
+        run: ./scripts/build.sh
+
+      - name: Run push script
+        run: ./scripts/push.sh
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Run deployment script
+        run: ./scripts/deploy.sh
+
