@@ -13,15 +13,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Grant execute permissions to scripts
+        run: chmod +x scripts/*.sh
+
       - name: Run build script
-        run: ./scripts/build.sh
+        run: bash ./scripts/build.sh
 
       - name: Run push script
-        run: ./scripts/push.sh
+        run: bash ./scripts/push.sh
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Run deployment script
-        run: ./scripts/deploy.sh
+        run: bash ./scripts/deploy.sh
+
 
